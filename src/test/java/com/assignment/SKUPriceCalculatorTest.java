@@ -2,7 +2,6 @@ package com.assignment;
 
 import com.assignment.models.Expression;
 import com.assignment.models.SKUnit;
-import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,10 +30,18 @@ public class SKUPriceCalculatorTest {
     }
 
     @Test
-    public void simpleHappyScenarioUnitPrice(){
+    public void simpleScenarioUnitPrice(){
         Expression exp1 = new SKUnit(1,'A')
                 .add(new SKUnit(1,'B'))
                 .add(new SKUnit(1,'C'));
         assertThat(calculator.calculatePrice(exp1)).isEqualTo(100.0);
+    }
+
+    @Test
+    public void simpleScenarioScheme(){
+        Expression exp1 = new SKUnit(5,'A')
+                .add(new SKUnit(5,'B'))
+                .add(new SKUnit(1,'C'));
+        assertThat(calculator.calculatePrice(exp1)).isEqualTo(370.0);
     }
 }
