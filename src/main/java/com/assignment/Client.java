@@ -1,11 +1,14 @@
 package com.assignment;
 
+import com.assignment.models.Expression;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class Client {
 
     private Map<Character,Double> unitPrice = new HashMap<>();
+    private Map<Expression,Double> scheme = new HashMap<>();
 
 
     public static void main(String[] args) {
